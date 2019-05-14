@@ -58,7 +58,7 @@ if __name__ == "__main__":
     wllist = [[] for i in range(thread_count)]
     for user in wlfile:
         wllist[tothread-1].append(user.strip())
-        if (tothread < thread_count):
+        if (tothread < thread_count-1):
             tothread+=1
         else:
             tothread = 0
@@ -96,7 +96,7 @@ if __name__ == "__main__":
 
         # Print results and terminate self if finished
         if len(processes) == 0:
-            print("EnumPOST finished, here is what I found:")
+            print("EnumPOST finished, and these usernames were found:")
             while True:
                 try:
                     entry = found_q.get(False)
