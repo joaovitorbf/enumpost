@@ -1,14 +1,16 @@
 # EnumPOST
 Quick web user enumeration via HTTP POST requests.
 
-A single script Python tool for enumerating users on a vulnerable form that uses POST requests.  
-Uses multiple parallel processes to quickly send login requests with a username dictionary and check if the page has changed or not, thus finding valid usernames. Pretty nice for CTFs.  
-This repository also has a simple vulnerable to enumeration PHP pseudo-login form for testing.
+A single script Python tool for enumerating users on a vulnerable POST request form.  
+Uses multiple parallel processes to quickly send login requests and check if the page has changed or not, thus finding valid usernames. Pretty nice for CTFs.  
+This repository also has a simple vulnerable pseudo-login page for testing.
 
 ## Installation
+Runs on Python 3 and depends on urllib3 and requests.
+
     $ git clone https://github.com/joaovitorbf/enumpost.git
     cd ./enumpost
-    pip install -r requirements.txt
+    pip install urllib3 requests
 
 ## Usage
     enumpost.py [-h] [-c cnt] [-v] [-s]
@@ -44,6 +46,6 @@ Testing the page "login" on "vulnerablewebsite.notadomain" with fields "user", "
     ./enumpost.py /etc/opt/wlists/users.txt httpp://vulnerablewebsite.notadomain/login "user:{USER}" "apitoken:987654321" "Invalid user"
     
 ## Disclaimer and licensing
-Don't use this script on servers you don't have permission to spam requests, enumerate users and all the other stuff you shouldn't be doing to someone else's server. This script will probably make the web server's access log explode.
+Don't use this script on servers you don't have permission to spam requests, enumerate users and all the other stuff you shouldn't be doing to someone else's server. This script will probably also make the web server's access log explode.
 
-Do whatever with my code. That makes it MIT licensed, I think? Never really understood software licensing.
+Do whatever with my code. I believe that makes it MIT licensed? Never really understood software licensing.
